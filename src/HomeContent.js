@@ -22,7 +22,7 @@ function HomeContent () {
   
     <Typography gutterBottom variant="h4" component="div" 
       sx={{
-      fontFamily: "Poppins", 
+      fontFamily: "Nunito", 
       color: "#FFFFFF",
       paddingTop: "100px",
       textAlign: "center",
@@ -41,7 +41,7 @@ function HomeContent () {
       <br/>
       <Typography gutterBottom variant="h4" component="div" 
       sx={{
-      fontFamily: "Poppins", 
+      fontFamily: "Nunito", 
       color: "#0076be",
       paddingTop: "370px",
       textAlign: "center",
@@ -51,9 +51,6 @@ function HomeContent () {
        Featured Vehicles
         </strong>
     </Typography>
-
-      {/* Component exported from Nirmal's repo */}
-      <FindACar></FindACar>
 
       {/*  */}
   {/* ------- FEATURED VEHICLES SECTION 1 ------- */}
@@ -127,14 +124,12 @@ function HomeContent () {
                 />
         </div>       
     </Container>
-
-    
       
   {/* ---------- VEHICLE SEARCH SECTION ---------- */}
 
     <Typography gutterBottom variant="h4" component="div" 
         sx={{
-        fontFamily: "Poppins", 
+        fontFamily: "Nunito", 
         color: "#0076be",
         paddingTop: "10px",
         textAlign: "center",
@@ -206,6 +201,9 @@ function HomeContent () {
         </div>       
     </Container>
     <br/>
+
+  {/* Component exported from Nirmal's repo */}
+  <FindACar></FindACar>
 
   {/* ---------- FOOTER ---------- */}
     <hr/>

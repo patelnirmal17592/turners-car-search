@@ -145,7 +145,7 @@ function LoginModal() {
               
               <Typography 
                 sx={{ 
-                    fontFamily: "Poppins",
+                    fontFamily: "Nunito",
                     color: "#0076be"
                  }} 
                 variant="h6"
@@ -154,7 +154,7 @@ function LoginModal() {
 
               <Typography
                 sx={{ 
-                    fontFamily: "Poppins",
+                    fontFamily: "Nunito",
                     color: "#0076be"
                  }}  
                 variant="h6"
