@@ -1,0 +1,90 @@
+[
+    {
+        "id": "1",
+        "image": "",
+        "carYear": 2008,
+        "type":"",
+        "make": "",
+        "model": "",
+        "price": "",
+        "odometer": "",
+        "location": ""
+    },
+    {
+        "id": "2",
+        "image": "",
+        "carYear": 2009,
+        "type":"",
+        "make": "",
+        "model": "",
+        "price": "",
+        "odometer": "",
+        "location": ""
+    },
+    {
+        "id": "3",
+        "image": "",
+        "carYear": 2012,
+        "type":"",
+        "make": "",
+        "model": "",
+        "price": "",
+        "odometer": "",
+        "location": ""
+    },
+    {
+        "id": "4",
+        "image": "",
+        "carYear": 2006,
+        "type":"",
+        "make": "",
+        "model": "",
+        "price": "",
+        "odometer": "",
+        "location": ""
+    },
+    {
+        "id": "5",
+        "image": "",
+        "carYear": 2001,
+        "type":"",
+        "make": "",
+        "model": "",
+        "price": "",
+        "odometer": "",
+        "location": ""
+    },
+    {
+        "id": "6",
+        "image": "",
+        "carYear": 2003,
+        "type":"",
+        "make": "",
+        "model": "",
+        "price": "",
+        "odometer": "",
+        "location": ""
+    },
+    {
+        "id": "7",
+        "image": "",
+        "carYear": 2007,
+        "type":"",
+        "make": "",
+        "model": "",
+        "price": "",
+        "odometer": "",
+        "location": ""
+    },
+    {
+        "id": "8",
+        "image": "",
+        "carYear": 2005,
+        "type":"",
+        "make": "",
+        "model": "",
+        "price": "",
+        "odometer": "",
+        "location": ""
+    }
+]
