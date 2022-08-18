@@ -55,8 +55,8 @@ export const FindACar = () => {
                 <div className={styles.car_info}>
                   <ul>
                     <li>{data.carYear} {data.make} {data.model}</li>
-                    <li>$ {data.price}</li>
-                    <li>{data.location}</li>
+                    <li>Price: $ {data.price}</li>
+                    <li>Location: {data.location}</li>
                   </ul>
                 </div>
               </div>
