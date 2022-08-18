@@ -17,7 +17,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-family: "Poppins";
+  font-family: "Nunito";
   background: #ffffff;
   color: #0076be;
 `;
@@ -31,7 +31,7 @@ export const Column = styled.div`
 
 export const Row = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
   grid-gap: 60px;
   grid-width: 80px;
 
@@ -42,7 +42,7 @@ export const Row = styled.div`
 `;
 
 export const FooterLink = styled.div`
-  font-family: "Poppins";
+  font-family: "Nunito";
   color: #0076be;
   margin-bottom: 8px;
   font-size: 14px;
@@ -53,7 +53,7 @@ export const FooterLink = styled.div`
 `;
 
 export const Heading = styled.div`
-  font-family: "Poppins";
+  font-family: "Nunito";
   font-size: 16px;
   color: #0076be;
   margin-bottom: 20px;
