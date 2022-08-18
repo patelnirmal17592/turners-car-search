@@ -34,7 +34,7 @@ app.post("/car", imageUpload.array('file'), (req, res) => {
 
   let uploadedFilePath = req.files[0].destination + '/' + req.files[0].originalname
 
-  // console.log('Request: ', uploadedFilePath)
+  console.log('Request: ', uploadedFilePath)
 
   const projectId = process.env.PROJECT_ID;
   const location = "us-central1";
@@ -67,6 +67,7 @@ app.post("/car", imageUpload.array('file'), (req, res) => {
     const [response] = await client.predict(request);
 
     for (const annotationPayload of response.payload) {
+      console.log(annotationPayload.displayName)
       res.send(annotationPayload.displayName);
     }
   }
