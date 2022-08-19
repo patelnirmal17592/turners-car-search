@@ -11,6 +11,7 @@ export const FindACar = () => {
   const [image, setImage] = useState(null);
   const [cars, setCars] = useState(carsData);
   const [response, setResponse] = useState();
+  const [userInput, setUserInput] = useState('')
 
   const handleFileUpload = (e) => {
     setCars(carsData)
@@ -30,15 +31,30 @@ export const FindACar = () => {
     }
   };
 
+  const handleChange = (e) => {
+    setUserInput(e.target.value)
+    console.log(userInput)
+
+    if (e.target.value === '') {
+      setCars(carsData)
+    }
+  }
+
   const searchHandler = () => {
     console.log("clicked");
+    setCars(cars.filter((data) => data.model === userInput))
+
+    if (userInput === '') {
+      setCars(carsData)
+    }
+    
   };
 
   return (
     <div className={styles.search_container}>
       <div className={styles.wrapper}>
         <div className={styles.input_search}>
-          <input type="search" placeholder="Search cars.."></input>
+          <input type="text" placeholder="Search car models.." onChange={(e) => handleChange(e)} value={userInput}></input>
           <div className={styles.search_btn} onClick={searchHandler}>
             Search
           </div>
