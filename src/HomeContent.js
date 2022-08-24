@@ -29,11 +29,11 @@ function HomeContent () {
       marginBottom: "0px"
       }}>
         <strong>
-        The sweetest used <span 
+        New Zealand's <span 
           style={{color: "#0076be"}}>
-             <em>car deals </em> 
-          </span>
-        you can imagine
+             <em>largest  </em> 
+          </span> used car network
+        for over 50 years
         </strong>
         
     </Typography>
@@ -204,6 +204,8 @@ function HomeContent () {
 
   {/* Component exported from Nirmal's repo */}
   <FindACar></FindACar>
+  <br/>
+  <br/>
 
   {/* ---------- FOOTER ---------- */}
     <hr/>
