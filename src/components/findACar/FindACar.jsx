@@ -10,10 +10,11 @@ import carsData from "../../../src/MOCK_DATA.json";
 export const FindACar = () => {
   const [image, setImage] = useState(null);
   const [cars, setCars] = useState(carsData);
-  const [response, setResponse] = useState();
+  const [response, setResponse] = useState(null);
+  const [userInput, setUserInput] = useState("");
 
   const handleFileUpload = (e) => {
-    setCars(carsData)
+    setCars(carsData);
     const formData = new FormData();
     formData.append("file", e.target.files[0], e.target.files[0].name);
     setImage(formData);
@@ -21,24 +22,45 @@ export const FindACar = () => {
 
   const handleSubmit = async () => {
     await axios
-      .post("http://localhost:3001/car", image)
-      .then((res) => setResponse(res.data))
-      .catch((err) => console.log(err));
+              .post("http://localhost:3001/car", image)
+              .then((res) => setResponse(res.data))
+              .catch((err) => console.log(err));
 
-    if (response) {
+    console.log(response);
+
+    if (response !== null) {
       setCars(cars.filter((data) => data.type === `${response}`));
+    }
+  };
+
+  const handleChange = (e) => {
+    setUserInput(e.target.value);
+    console.log(userInput);
+
+    if (e.target.value === "") {
+      setCars(carsData);
     }
   };
 
   const searchHandler = () => {
     console.log("clicked");
+    setCars(cars.filter((data) => data.model === userInput));
+
+    if (userInput === "") {
+      setCars(carsData);
+    }
   };
 
   return (
     <div className={styles.search_container}>
       <div className={styles.wrapper}>
         <div className={styles.input_search}>
-          <input type="search" placeholder="Search cars.."></input>
+          <input
+            type="text"
+            placeholder="Search car models.."
+            onChange={(e) => handleChange(e)}
+            value={userInput}
+          ></input>
           <div className={styles.search_btn} onClick={searchHandler}>
             Search
           </div>

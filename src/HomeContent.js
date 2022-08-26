@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography';
 import Cars from "./Cars.jpg";
 import Footer from './HomeFooter';
 import { FindACar } from './components/findACar/FindACar';
+import SearchBar from './components/SearchBar/SearchBar'
 
 
 function HomeContent () {
@@ -201,7 +202,7 @@ function HomeContent () {
         </div>       
     </Container>
     <br/>
-
+          <SearchBar></SearchBar>
   {/* Component exported from Nirmal's repo */}
   <FindACar></FindACar>
   <br/>
