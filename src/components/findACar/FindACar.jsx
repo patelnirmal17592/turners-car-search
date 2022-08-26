@@ -10,9 +10,10 @@ import carsData from "../../../src/MOCK_DATA.json";
 export const FindACar = () => {
   const [image, setImage] = useState(null);
   const [cars, setCars] = useState(carsData);
-  const [response, setResponse] = useState()
+  const [response, setResponse] = useState();
 
   const handleFileUpload = (e) => {
+    setCars(carsData)
     const formData = new FormData();
     formData.append("file", e.target.files[0], e.target.files[0].name);
     setImage(formData);
@@ -24,20 +25,26 @@ export const FindACar = () => {
       .then((res) => setResponse(res.data))
       .catch((err) => console.log(err));
 
-      if (response) {
-        setCars(cars.filter((data) => data.type === `${response}`))
-      }
+    if (response) {
+      setCars(cars.filter((data) => data.type === `${response}`));
+    }
   };
 
-  const searchHandler = () => {};
+  const searchHandler = () => {
+    console.log("clicked");
+  };
 
   return (
     <div className={styles.search_container}>
       <div className={styles.wrapper}>
         <div className={styles.input_search}>
-          <input type="search"></input>
-          <div className={styles.search_btn}>Search</div>
+          <input type="search" placeholder="Search cars.."></input>
+          <div className={styles.search_btn} onClick={searchHandler}>
+            Search
+          </div>
+          <label htmlFor="file">Upload image</label>
           <input
+            id="file"
             type="file"
             accept="image/png, image/jpeg, image/jpg"
             onChange={(e) => handleFileUpload(e)}
@@ -51,13 +58,19 @@ export const FindACar = () => {
           {cars.map((data, index) => (
             <div className={styles.map_container} key={index}>
               <div className={styles.mapped_items} key={index}>
-                <img src={data.image} alt='ImageOfCar'></img>
+                <img src={data.image} alt="ImageOfCar"></img>
                 <div className={styles.car_info}>
                   <ul>
-                    <li>{data.carYear} {data.make} {data.model}</li>
-                    <li>$ {data.price}</li>
-                    <li>{data.location}</li>
+                    <li>
+                      {data.carYear} {data.make} {data.model}
+                    </li>
+                    <li>Price: $ {data.price}</li>
+                    <li>Location: {data.location}</li>
                   </ul>
+                  <div className={styles.card_btns}>
+                    <button>View car</button>
+                    <button>Book a test drive</button>
+                  </div>
                 </div>
               </div>
             </div>
