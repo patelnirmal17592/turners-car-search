@@ -23,7 +23,7 @@ describe("Punctuation Tests", () => {
       // Retrives the component from the tree and allows us to get the Label text
       const input = screen.getByLabelText(
         "Ask me anything about breakdown insurance..."
-      ) as HTMLInputElement;
+      );
 
       // Act
       // Simulate a user inputting text into the input field
