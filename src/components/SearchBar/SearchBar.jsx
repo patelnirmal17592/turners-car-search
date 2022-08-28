@@ -9,13 +9,14 @@ import React from "react";
 const SearchBar = () => {
   const [value, setValue] = useState("");
   const [serverRes, setServerRes] = useState([]);
+  const [loading, setLoading] = useState(false)
 
   const handleChange = (event) => {
     let userInput = event.target.value;
     let specCharRegex = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/gi;
     let specialCharSearch = userInput.replace(specCharRegex, " ");
-    let removeSpac = specialCharSearch.trim();
-    setValue(removeSpac);
+    // let removeSpac = specialCharSearch.trim();
+    setValue(specialCharSearch);
     // console.log(value);
   };
 
@@ -25,6 +26,11 @@ const SearchBar = () => {
       .post("http://localhost:3001/car-insurance", { data: `${value}` })
       .then((res) => setServerRes(res.data))
       .catch((err) => console.log(err));
+    if (serverRes === '') {
+    setLoading(true)
+    } else {
+      setLoading(false)
+    }
   };
 
   return (
@@ -49,7 +55,7 @@ const SearchBar = () => {
             className={style.userInput}
           />
           <LoadingButton
-            loading={false}
+            loading={loading}
             loadingIndicator="Loading…"
             variant="outlined"
             className={style.search}
@@ -62,7 +68,7 @@ const SearchBar = () => {
       </div>
       <div className={style.resultWrapper}>
         <div className={style.resultContainer}>
-          <h4>Your question: {value}</h4>
+          <h4>Your question: {value}?</h4>
           <div className={style.content}>
             {serverRes.map((data, index) => (
               <ul index={index}>
