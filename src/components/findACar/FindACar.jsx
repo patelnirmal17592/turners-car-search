@@ -35,7 +35,7 @@ export const FindACar = () => {
 
   const handleChange = (e) => {
     setUserInput(e.target.value);
-    console.log(userInput);
+    // console.log(userInput);
 
     if (e.target.value === "") {
       setCars(carsData);
@@ -44,10 +44,12 @@ export const FindACar = () => {
 
   const searchHandler = () => {
     console.log("clicked");
-    setCars(cars.filter((data) => data.model === userInput));
-
+    
     if (userInput === "") {
       setCars(carsData);
+    } else if (userInput !== null){
+      console.log(setCars(cars.filter((data) => data.model === userInput)));
+      setCars(cars.filter((data) => data.model === userInput));
     }
   };
 

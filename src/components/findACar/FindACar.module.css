@@ -93,12 +93,8 @@
 }
 
 .map_container {
-  width: 25%;
-  height: 300px;
-  border: 2px solid #d3d3d3;
   background-color: white;
   color: #0076be;
-
 }
 .map_container .mapped_items {
   width: 350px;
